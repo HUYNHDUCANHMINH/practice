@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>HTML Tutorial</title>
+<head>
+    <meta charset="UTF=-8">
+    <meta http-equiv="refesh" content="2">
+    <style>
+        table, th, td {
+            border: 1px solid;
+            border-collapse: collapse;
+            border-color: chocolate;
+        }
+        table {
+            width: 300px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <h1><b>1. The text</b></h1>
+            <h1>This is a heading</h1>
+            <h2>This is a heading</h2>
+            <p><b>The noi dung</b></p>
+            <p>Ko can in nghieng<u>The noi dung</u></p><br>
+            <i>The in nghieng</i>
+    <hr width="50%">
+    <ol type="I"><b>Thanh pho Ho Chi Minh</b>
+        <li>Quan 1</li>
+        <li>Quan 2</li>
+        <li>Quan 3</li>
+        <li>Quan 4</li>
+    </ol>
+    <ul style="list-style-type: circle;"><b>Thanh Pho Ho Chi Minh</b>
+    <li>Quan 1</li><li>Quan 2</li><li>Quan 3</li><li>Quan 4</li>
+    </ul>
+    <hr width="50%">
+    <h1><b>2. The gan link va hinh anh</b></h1>
+        <a href="https://vnexpress.net" target="_blank">Trang Vnexpress</a>
+        <img src="https://soccerdigestweb.thedigestweb.com/v=1636695735/files/topics/100942_ext_04_0.jpg" alt="ko hien thi anh">
+    <hr width="50%">
+    <h1>3. The Video</h1>
+        <video width="320" height="auto" controls>
+            <source src="https://video.vnexpress.net/embed/v_352155">
+        </video>
+    <hr width="50%">
+    <h1><b>4. The Form</b></h1>
+    <form action="#" method="post" name="dangnhap">
+        <h2>①Dang nhap</h2>
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" note="ko dc nhap ky ty hoa"><br>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" minlength="8" maxlength="16" title="Ban phai nhap hon 8 ky tu">
+        <input type="submit" value="Send" name="submit"><br>
+    </form>
+        <h2>②Dang ky</h2>
+    <form action="#" method="post" name="dangky">
+        <label for="fullname">Fullname</label>
+            <input type="text" name="fullname" id="fullname" required><br>
+        <label for="birthday">Birthday</label>
+            <input type="date" name="date" id="birthday" required><br>
+        <label for="age">Age</label>
+            <input type="number" name="number" id="age" min="12" max="65" required><br>
+        <label for="gender">Gender</label><br>
+            <input type="radio" name="gender" id="male" required>
+            <label for="gender">Nam</label>
+            <input type="radio" name="gender" id="femake" required>
+            <label for="radio">Nu</label><br>
+        <label for="email">Email</label>
+            <input type="text" name="email" id="email" required>
+            <input list="text" name="text">
+                <datalist id="text">
+                    <option value="@gmail.com">
+                    <option value="@yahoo.com">
+                </datalist><br>
+        <label for="address">Address</label>
+            <input type="text" name="address" id="address" required><br>
+        <label for="country"> Quoc gia</label>
+            <input type="country" name="country" id="country"><br>
+        <label for="telephone">Telephone Contact</label>
+            <input type="number" name="nummber" id="telephone" required><br>
+        <label for="username">Ten dang ky</label>
+            <input type="text" name="text" id="username" required><br>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" minlength="8" maxlength="16" title="phai nhap hon 8 ky tu"><br>
+        <input type="submit" name="submit" value="Dang ky"> 
+    </form>
+    <b><h1>The table</h1></b>
+        <table>
+            <tr>
+                <th>Nguyen vat Lieu</th>
+                <th>Gia tien</th>
+                <th>Chi phi van chuyen</th>
+                <th>Phan loai</th>
+            </tr>
+            <tr>
+                <td>Thep</td>
+                <td>19</td>
+                <td>2</td>
+                <td rowspan="2">chi phi nguyen vat lieu</td>
+            </tr>
+            <tr>
+                <td>Cat</td>
+                <td>45</td>
+                <td>4</td>
+            </tr>
+        </table>
+<body>
+<html>
