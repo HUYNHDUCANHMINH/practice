@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Cach tinh so tien goi sau n nam theo phuong thuc tinh lai kep</h1>
+</body>
+</html>
+<script>
+    let Sotiengoi = prompt("Nhap vao so tien goi");
+    let Laisuattiengoi = 0.06
+    let n = prompt("so nam");
+    let m = prompt("so lan ghep lai trong mot nam");
+    let Tongtien = Sotiengoi * (1 + Laisuattiengoi / m) ** (n * m);
+    document.write("So tien goi cua ban sau " + n + " nam la : " + Tongtien)
+</script>

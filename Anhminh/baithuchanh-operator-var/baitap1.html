@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let year = prompt("nhap vao nam :")
+    let month = prompt("nhap vao thang :")
+        if (month < 10) {
+            month = "0" + month
+        }
+            else {
+                month = month
+            }
+    let day = prompt("nhap vao ngay :")
+        if (day < 10) {
+            day = "0" + day
+        }
+            else {
+                day = day
+            }
+
+    document.write("Ngay thang nam sinh cua ban la: " + day + " - " + month + " - " +year)
+</script>
