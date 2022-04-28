@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2 {
+            background-color: aquamarine;
+            color: blue;
+        }
+        form {
+            width: 600px;
+            border: 1px solid white;
+            background-color: rgb(211, 211, 135);
+        }
+        table {
+            width: 590px;
+            margin: 5px;
+            border: 1px solid white;
+        }
+    </style>
+</head>
+    
+<body>
+    <form action="post">
+        <table>
+            <tr>
+                <td colspan="4"><h2>DANG KY HOC VIEN</h2></td>
+            </tr>
+            <tr>
+                <td class="text">Ho va Ten:</td>
+                <td colspan="3"><input type="text" size="30px" required></td>
+            </tr>
+            <tr>
+                <td class="text">Ngay Sinh:</td>
+                <td colspan="3"><input type="text" placeholder="ngay/thang/nam" size="20px" required></td>
+            </tr>
+            <tr>
+                <td class="text">Gioi tinh:</td>
+                <td colspan="3"><input type="radio" name="gender">Nam
+                    <input type="radio" name="gender">Nu</td>
+            </tr>
+            <tr>
+                <td class="text">Dia Chi:</td>
+                <td colspan="3"><form method="post">
+                    <textarea cols="50" rows="4" blank required></textarea>
+                </form>
+                </td>
+            </tr>
+            <tr>
+                <td class="text" size="18px">Lop:</td>
+                <td colspan="3">
+                    <input list="text" placeholder="-Chon lop-" required>
+                    <datalist id="text">
+                        <option value="lop co ban">
+                        <option value="lop trung cap">
+                        <option value="lop nang cao">
+                    </datalist>
+                </td>
+            </tr>
+            <tr>
+                <td class="text">Email:</td>
+                <td colspan="3"><input type="text" size="24px" required></td>
+            </tr>
+            <tr>
+                <tr>
+                    <td class="text">Dien Thoai:</td>
+                    <td colspan="3"><input type="text" size="24px" required></td>
+                </tr>
+            </tr>
+            <tr>
+                <tr>
+                    <td></td> 
+                    <td colspan="3"><input type="submit" value="Dang Ky" size="20px">
+                                    <input type="reset" value="Nhap lai" size="20px">
+                    </td>
+                </tr>
+            </tr>
+        </table>
+        
+        </form>
+    <script>
+        let x = 5
+        let x1 = x++
+        console.log(x);
+        console.log(x1);
+    </script>
+</body>
+</html>
