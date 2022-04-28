@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 50%;
+            height: 20px;
+            border: 1px solid;
+            background-color: antiquewhite;
+            text-align: center;
+        }
+        td {
+            font-size: larger;
+            color: orange;
+        }
+        input {
+            width: 80%;
+            height: 24px;
+            border: 1px solid;
+            background-color: blue;
+            text-decoration: violet;
+        }
+    </style>
+</head>
+<body>
+    <h1><b>Calculator</b></h1>
+    <table>
+        <tr>
+            <td colspan="4" text="Cal" id="Cal" placeholder="0"></td>
+        <tr>
+            <td><button onclick="ngoac1">(</button></td>
+            <td><button onclick="ngoac2">)</button></td>
+            <td><button onclick="tyle">%</button></td>
+            <td><button onclick="reset">AC</button></td>
+        </tr>
+        </tr>
+            <td><button onclick="7">7</button></td>
+            <td><button onclick="8">8</button></td>
+            <td><button onclick="9">9</button></td>
+            <td><button onclick="div">:</button></td>
+        <tr>
+        <tr>
+            <td><button onclick="4">4</button></td>
+            <td><button onclick="5">5</button></td>
+            <td><button onclick="6">6</button></td>
+            <td><button onclick="mul">x</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="1">1</button></td>
+            <td><button onclick="2">2</button></td>
+            <td><button onclick="3">3</button></td>
+            <td><button onclick="sub">-</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="0">0</button></td>
+            <td><button onclick="point">.</button></td>
+            <td><button onclick="equal">=</button></td>
+            <td><button onclick="add">:</button></td>
+        </tr>
+        <td></td>
+        <td id="sub"></td>
+        <td id="multi"></td>
+        <td id="div"></td>
+    </table>
+</body>
+<script>
+    function Add() {
+        let No1 = document.querySelector("#number1").value
+        let No2 = document.getElementById("number2").value
+        let No3 = document.querySelector("#number3").value
+        let No4 = document.querySelector("#number4").value
+        let No5 = document.querySelector("#number5").value
+        let No6 = document.querySelector("#number6").value
+        let No7 = document.querySelector("#number7").value
+        let No8 = document.querySelector("#number8").value
+        let No9 = document.querySelector("#number9").value
+        No1 = parseFloat(No1);
+        No2 = parseFloat(No2);
+        No3 = parseFloat(No3);
+        No4 = parseFloat(No4);
+        No5 = parseFloat(No5);
+        No6 = parseFloat(No6);
+        No7 = parseFloat(No7);
+        No8 = parseFloat(No8);
+        No9 = parseFloat(No9);
+        
+        let Cal_add = No1 + No2
+            Cal_add = Cal_add.toFixed(2)
+        document.write("Result Division : " + Cal_add);
+    }
+    function Sub() {
+        let No3 = document.querySelector("#number1").value
+        let No4 = document.getElementById("number2").value
+        No3 = parseFloat(No3);
+        No4 = parseFloat(No4);
+        let Cal_Sub = No3 - No4
+            Cal_Sub = Cal_Sub.toFixed(2)
+        document.getElementById("sub").innerHTML="Result Division : " + Cal_Sub;
+    }
+    function Multi() {
+        let No5 = document.querySelector("#number1").value
+        let No6 = document.getElementById("number2").value
+        No5 = parseFloat(No5);
+        No6 = parseFloat(No6);
+        let Cal_Multi = No5 * No6
+            Cal_Multi = Cal_Multi.toFixed(2)
+        document.getElementById("multi").innerHTML= "Result Division : " + Cal_Multi;
+    }
+    function Div() {
+        let No7 = document.querySelector("#number1").value
+        let No8 = document.getElementById("number2").value
+        No7 = parseFloat(No7);
+        No8 = parseFloat(No8);
+        let Cal_Div = No7 / No8
+            Cal_Div = Cal_Div.toFixed(2)
+        document.getElementById("div").innerHTML= "Result Division : " + Cal_Div;
+    }
+</script>
+</html>

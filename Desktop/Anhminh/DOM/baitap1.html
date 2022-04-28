@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 100%;
+        }
+        h1 {
+            text-align: center;
+            color: red;
+            font-size: 24px;
+        }
+        td {
+            text-align: center;
+            background-color: aqua;
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <h1><b>KIEM TRA SO CHAN</b></h1>
+                <p>Nhap so kiem tra</p>
+                <form action="">
+                    <input type="number" id="number">
+                    <button onclick="Test1();">Kiem tra</button>
+                </form>
+            </td>
+            <td>
+                <h1><b>KIEM TRA BOI SO</b></h1>
+                <p>Nhap so kiem tra</p>
+                <form action="">
+                    <input type="number" id="number1">
+                    <input type="number" id="number2">
+                    <button onclick="Test2();">Kiem tra</button>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <h1><b>NGHIEM PHUONG TRINH BAC HAI</b></h1>
+                <p>Nhap a, b, c</p>
+                <form action="">
+                    <input type="number" id="number3">
+                    <input type="number" id="number4">
+                    <input type="number" id="number5">
+                    <button onclick="Test3();">Tinh nghiem</button>
+                </form>
+            </td>
+
+        </tr>
+    </table>
+    
+    </body>
+</html>
+<script>
+    function Test1() {
+    let w = document.querySelector("#number").value;
+    w = parseFloat(x);
+        if (w % 2 == 0) {
+            alert( w + " la so chan");
+        }
+        else {
+            alert( w + " la so le");
+        }
+    }
+    </script>
+    <script>
+        function Test2 () {
+            let y = document.querySelector("#number1").value;
+            let z = document.getElementById("number2").value;
+            y = parseFloat(y);
+            z = parseFloat(z);
+            if (y % z == 0 && y - z >> 0) {
+                alert(y + " la boi so cua " +z)
+            }
+                else {
+                alert(y + " khong phai la boi so cua " +z)
+                }
+        }
+    </script>
+    <script src="nghiembac2.js">
+    </script>
