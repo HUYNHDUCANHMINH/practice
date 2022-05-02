@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        tr {
+            width: 60px;
+            height: 30px;
+            background-color: aqua;
+
+        }
+        table {
+            width: 100%;
+            height: 200px;
+            background-color: beige;
+        }
+        h1  {
+            text-align :center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bai Tap Thuc Hanh Cau Truc Dieu Kien</h1>
+        <div>
+            <table>
+            <tr>
+                <td><input type="text" id="th1"><button onclick="test1();">Thuc Hanh 1</button></td>
+                <td><input type="text" id="user"><button onclick="test2();">Login</button><br>
+                <input type="password" id="pw" placeholder="Nhap password"></td>
+                <td><input type="text" id="message"><button onclick="test3();">Thuc Hanh 3</td>
+                <td><button onclick="test4();" id="a">Xuat hien so a<br>
+                    <button onclick="test5();" id="b">Kiem tra so b</button></td>
+            </tr>
+            </table>
+            <h1>Thuc hanh toan tu 3 ngoi</h1>
+            <table>
+                <tr>
+                
+                <td><button id="result1" onclick="result1();">Result ket qua tong</button></td>
+                <td><button id="result2" onclick="result2();">Nhap gia tri vao</button></td>
+                <td></td>
+                <td></td>
+            </tr>
+            </table>
+        </div>
+</body>
+    <script src="thuchanh1.js"></script>
+    <script>
+    function result1() {
+        let aa = +prompt("Nhap so aa");
+        let bb = +prompt("Nhap so bb");
+        let Tong = (aa + bb) < 4 ? "Below" : "Over";
+            alert(Tong);
+        }
+    function result2() {
+        let Login = prompt("Xin nhập đúng giá trị ","");
+        let returnResult = Login == "Employee" ? "Hello" : Login == "Director" ? "Greetings" : Login == "" ? "No login" : "??";
+            alert(returnResult);
+    }
+    </script>
+
+</html>
