@@ -85,12 +85,12 @@
         result = ""
     }
     function undo() {
-        let undo = document.getElementById("display").value = ""
+        let undo = document.getElementById("display").value
         undo = undo.substring(0,undo.length-1)
         result=""
     }
     function percent() {
-        let percent = document.getElementById("display1").value = ""
+        let percent = document.getElementById("display1").value
         percent = parseInt(percent)
         PERCENT = (percent/100).toFixed(2)
         document.getElementById("display").value = PERCENT
