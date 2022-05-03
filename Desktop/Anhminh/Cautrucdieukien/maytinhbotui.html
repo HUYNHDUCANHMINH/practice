@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 400px;
+            border: 1px solid;
+            background-color: antiquewhite;
+        }
+        td {
+            text-align: center;
+            width: 5px;
+            height: 5px;
+            border: 1px solid;
+            background-color: aqua;
+            
+        }
+        tr {
+            border: 2px solid;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr><h4 id="display1"></h4></tr>
+        <tr><td colspan="4"><input id="display" placeholder="Result" value="" size="50px"></td></tr>
+    <tr>
+        <td><button onclick="percent('%')">%</button></td>
+        <td><button onclick="undo()">DEL</button></td>
+        <td><button id="sqrt" onclick="sqrt()">√a</button></td>
+        <td><button onclick="reset()">AC</button></td>
+    </tr>
+    </tr>
+        <td><button id="7" onclick="getnumber('7')">7</button></td>
+        <td><button id="8" onclick="getnumber('8')">8</button></td>
+        <td><button id="9" onclick="getnumber('9')">9</button></td>
+        <td><button id="plus" onclick="getnumber('+')">+</button></td>
+    <tr>
+    <tr>
+        <td><button id="4" onclick="getnumber('4')">4</button></td>
+        <td><button id="5" onclick="getnumber('5')">5</button></td>
+        <td><button id="6" onclick="getnumber('6')">6</button></td>
+        <td><button id="sub" onclick="getnumber('-')">-</button></td>
+    </tr>
+    <tr>
+        <td><button id="1" onclick="getnumber('1')">1</button></td>
+        <td><button id="2" onclick="getnumber('2')">2</button></td>
+        <td><button id="3" onclick="getnumber('3')">3</button></td>
+        <td><button id="multi" onclick="getnumber('*')">*</button></td>
+    </tr>
+    <tr>
+        <td><button id="0" onclick="getnumber('0')">0</button></td>
+        <td><button id="point" onclick="getnumber('.')">.</button></td>
+        <td><button id="equal" onclick="calculator()">=</button></td>
+        <td><button id="div" onclick="getnumber('/')">/</button></td>
+    </tr>
+</table>
+</body>
+</html>
+<script>
+    let result = ""
+    function getnumber(num) {
+        document.getElementById("display").value += num
+        let check = result.split("")
+        let num1 = check[check.length-1] == "-" || check[check.length-1] == "+" || check[check.length-1] == "/"
+        let num2 = num == "-" || num == "+" || num == "/"
+        if (num1 && num2) {
+            check[check.lenght-1] = num
+            result = check.join("")
+            document.getElementById("display").value = result
+        } else 
+            result += num
+    }
+    function calculator() {
+        document.getElementById("display").value = eval(result)
+        document.getElementById("display1").innerHTML = eval(result)
+        result = ""
+        }
+    function reset() {
+        document.getElementById("display").value = ""
+        result = ""
+    }
+    function undo() {
+        let undo = document.getElementById("display").value = ""
+        undo = undo.substring(0,undo.length-1)
+        result=""
+    }
+    function percent() {
+        let percent = document.getElementById("display1").value = ""
+        percent = parseInt(percent)
+        PERCENT = (percent/100).toFixed(2)
+        document.getElementById("display").value = PERCENT
+    }
+  </script>

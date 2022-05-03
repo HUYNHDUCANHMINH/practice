@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td><h1> Bang Gia Hoa Qua</h1>
+                <h2 id="result"> Gia hien thi la </h2>
+            <input list="text" id="type" placeholder="-Chon trai cay-">
+            <button type="text" id="price" onclick="Gia();">Xem Gia</button> 
+                <datalist id="text">
+                <option value="Oi">
+                <option value="Dua Hau">
+                <option value="Tao">
+                <option value="Xoai">
+                <option value="Cam">
+                <option value="Chom Chom">
+                <option value="Mang Cut"></datalist></td><br>
+            <td>
+                <h1>Tinh Diem Dai Hoc khoi D</h1>
+                    Mon Toan<input type="number" id="math"><br>
+                    Mon Van<input type="number" id="lit"><br>
+                    Mon Tieng Anh<input type="number" id="eng"><br>
+                    Khu Vuc<select name="text" id="area">
+                        <option value="0.75">KV1</option>
+                        <option value="0.5">KV2</option>
+                        <option value="0.25">KV3</option>
+                        <option value="0">KV4</option><br>
+                        </select><br>
+                        <button id="cal" onclick="CAL();">Tinh Diem</button><br>
+                <h2>Tong Diem Dai Hoc khoi D cua ban la : <span id="result2" style="color:red"></span></h2><br>
+                <h2>Xep Loai : <span id="blank" style="color:aqua"></span></h2><br>
+                <h2>Danh gia : <span id="Grade" style="color:orange"></span></h2>
+            </td>
+            <td><h2>Nhap nam vao day : <span id="YEAR" style="color:chartreuse"></span></h2><br>
+                <input type="number" id="year" placeholder="Nhap nam"><button onclick="Nhapnam()">YEAR</button><br>
+                <h2>Hien thi so ngay trong thang la :<span id="a" style="color:blue"></span></h2>
+                <input type="number" id="number" placeholder="Nhap so thang">
+                <button onclick="checkmonth()">Count day</button></td>
+            <td><h2>Tinh chi so can nang BMI : <span id="weight" style="color:pink"></span></h2>
+                <input type="text" id="wei" placeholder="Nhap so can (kg)"><br>
+                <input type="text" id="hei" placeholder="Nhap chieu cao (cm)"><br>
+                <button onclick="BMI()">Tinh BMI</button><br>
+                <h2>Danh gia than the <span id="b" style="color:red"></span></h2></td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td><h1>TINH NAM AM LICH</h1>
+                <h2>NHAP NAM DUONG LICH</h2>
+                <input type="number" id="amlich" placeholder="Nhap Nam Duong lich" style="color:red;">
+                <button onclick="amlich();">Nhap Nam</button><br>
+                <h2>NAM AM LICH CUA NAM <span id="AMLICH" style="color:chocolate"></span></h2>
+            </td>
+            <td><h1>UNG DUNG DOI TIEN TE</h1>
+            <input type="number" id="cash" placeholder="Nhap so tien">
+                <select id="type1">
+                    <option value="23000">VND</option>
+                    <option value="1">USD</option>
+                    <option value="175">YEN</option>
+                    <option value="23500">EURO</option>
+                    <option value="27900">POUND</option>
+                </select>
+                <select id="type2">
+                    <option value="23000">VND</option>
+                    <option value="1">USD</option>
+                    <option value="175">YEN</option>
+                    <option value="23500">EURO</option>
+                    <option value="27900">POUND</option>
+                </select>
+                <button onclick="Convert();">Chuyen doi</button><br>
+                <h2>Thanh tien la : <span id="conv" style="color:cornflowerblue"></span></h2>
+            </td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+</html>
+<script src="banggiahoaqua.js"></script>
+<script src="bangdiemdaihoc.js"></script>
+<script src="songay.js"></script>
+<script src="dobeophi.js"></script>
+<script src="namamlich.js"></script>
+<script>
+    function Convert() {
+        let select1 = document.getElementById("type1").value;
+        let select2 = document.getElementById("type2").value;
+        let convert = parseInt(document.getElementById("cash").value);
+                document.getElementById("conv").innerHTML=((convert*select2)/select1).toFixed(2)
+            }
+</script>
