@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Lay lay value tu hop thoai</h1>
+    <input type="number" id="value">
+    <button onclick="laygiatri();">VALUE</button>
+    <h3>So binh phuong cua gia tri nhap la : <span id="display" style="color:red"></span></h3>
+    <input type="number" id="a" placeholder="Nhap so a">
+    <input type="number" id="b" placeholder="Nhap so b">
+    <button onclick="Multi();">Multi</button>
+    <h3>Tich cua 2 so c, d la : <span id="display1" style="color:orange"></span></h3>
+    <input type="text" name="" id="c" placeholder="nhap so c">
+    <input type="text" name="" id="d" placeholder="nhap so d">
+    <input type="text" name="" id="e" placeholder="nhap so e">
+    <button onclick="CAL1()">Calculator</button>
+    <button onclick="CAL2()">Binh phuong cua c,d</button><br><br>
+    Chu vi la : <p id="display2"></p>
+    Dien tich la :<p id="display3"></p><br><br>
+    Binh Phuong cua a,b<p id="display4"></p><br>
+    <button onclick="Allsub()">Allsub</button>
+    <h4>Tong so tu so c den d la : <span id="display5" style="color:blueviolet"></span></h4>
+    <button onclick="test1();">Test 3 canh</button>
+    <h4>Kiem tra tam giac ( 3 canh la c,d,e ) <span id="display6" style="color:red"></span></h4>
+</body>
+</html>
+<script src="1.js"></script>
+<script src="2.js"></script>
+<script>
+    function test1(){
+        let c = parseInt(document.getElementById("c").value);
+        let d = parseInt(document.getElementById("d").value);
+        let e = parseInt(document.getElementById("e").value);
+            if ((c+d)>e && (d+e)>c && (e+c>d)) {
+                if ( c == d && d == e && c == e)
+                document.getElementById("display6").innerHTML = " : c,d,e la 3 canh cua mot tam giac deu"
+                else if (c == d && d !== e || d == e && e !== c || e==c && c !==d)
+                    document.getElementById("display6").innerHTML = " : c,d,e la 3 canh cua mot tam giac can"
+                else if (c*c==d*d+e*e || d*d==c*c+e*e || e*e == d*d + c*c)
+                document.getElementById("display6").innerHTML = " : c,d,e la 3 canh cua mot tam giac vuong"
+            }
+                else {
+                document.getElementById("display6").innerHTML = " : c,d,e ko phai la 3 canh cua mot tam giac"
+            }  
+        }
+        //let tamgiac = 
+</script>
