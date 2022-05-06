@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let show = "cuu chuong"
+    // show = "<table border='1' width = '10' cellspacing='0' cellpadding='3'>"
+    //     for (d = 1 ; d <=10 ; d++) {
+    //         show = show + "<tr>" + "<td>" + "Cuc chuong" + "</td>";
+    //             show = show + "</tr>";
+    //     }
+    // show = show + "</table>";
+    let disp;
+    disp = "<table border='1' width = '300' cellspacing='0' cellpadding='3'>" 
+        for (i=1; i<=10 ; i++) {
+            disp = show + disp + "<tr>"
+            for (f=1 ; f <=20 ; f++) {
+                disp = disp + "<td>" + i*f + "</td>"
+                }
+                    disp = disp + "</tr>";
+                }
+    disp = disp + "</table>";
+    document.write(disp);
+            
+</script>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let i = 0;
+    let string = prompt("nhap chuoi ky ty bat ky : ");
+            while ( i <= string.length) {
+        character = string.charAt(i);
+                if (!isNaN(character * 1)) {
+            alert(" la mot chuoi so ky ty");
+        }           else {
+                        if (character == character.toUpperCase()) {
+                            alert(string + " chuoi so co ky tu viet Hoa");
+                    }   if ( character == character.toLowerCase()) {
+                            alert(string + " chuoi so co ky tu viet thuong");
+                        } 
+                    }
+        i++
+                }
+</script>

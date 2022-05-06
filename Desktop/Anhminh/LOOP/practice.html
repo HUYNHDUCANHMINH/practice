@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Su dung vong lap LOOP</h1>
+    <input type="text" id="input" placeholder="Nhap Number">
+    <button onclick="CAL();">Get</button>
+    <h2>Tong gia tri la : <span id="show" style="color:red"></span></h2>
+</body>
+</html>
+<script>
+    //cosole.log("Nhap so can kiem tra vao : ");
+    //function CAL() {
+    //let display = document.getElementById("show");
+    //let getinput = parseInt(document.getElementById("input").value);
+    let num = +prompt("Nhap mot so vao day : ")
+    let sum = 0
+    while (num != -1) {
+        num = +prompt("Nhap mot so vao day : ")
+        //getinput = parseInt(document.getElementById("input").value);
+        alert(num);
+        //document.getElementById("show").innerHTML = getinput;
+        sum += num;
+        document.getElementById("show").innerHTML = sum;
+    }
+</script>

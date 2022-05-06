@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>hay doan thu xem</h1>
+    <button id="bam">Click_Me</button>
+</body>
+</html>
+<script>
+    //function doan_xem(){
+        document.getElementById("bam").addEventListener("click",function() {
+         let inputNo= +prompt("Nhap khoang");
+            max = parseInt(inputNo);
+            // if (inputNo == null){
+            // alert("Xin nhap so can tim vao day");
+            // } else (/[A-Za-x]/.test(max)) 
+            //     alert("Dung nhap chu cai vao day");
+        let result = Math.floor(Math.random()+ max)
+        let i = 1,
+            input = prompt("Nhap so Doan lan " + i + "(luu y ban chi duoc doan 3 lan"
+                + "Dap an nam trong khoang tu 0 den " + max)
+                i++;
+                while (i<=3) {
+                if (input=null){
+                    alert("nhap so ban doan vao di");
+                } else 
+                input > result ? alert("nhap lai di 1") : input < result ? alert("nhap lai di 2") : alert("chuc mung ban"
+
+                //     if ( input > result) {
+                //         alert("so ban nhap LON HON ket qua");
+                //         if (input < result) {
+                //             alert("so ban nhap NHO HON ket qua")
+                //             if (input == result) {
+                //                 alert("chuc mung ban")
+                //             } break
+                // if (i>3) {
+                //     alert("Ban da nhap qua 3 lan")
+</script>
