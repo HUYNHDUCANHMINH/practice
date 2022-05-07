@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p style="color:blue">Hãy viết một chương trình in ra các số từ 1 đến 100. Nhưng nếu số chia hết cho 3 thì in ra “Fizz”,</p>
+    <p style="color:blue">5 thì in ra “Buzz” thay vì in ra số đó. Và nếu số đó chia hết cho cả 3 và 5 thì in ra chữ “FizzBuzz”.</p>
+    <p id="d"></p>
+    <p id="d1"></p>
+</body>
+<script>
+   
+    let F = "Fizz"
+    let B = "Buxx"
+    let FB = F + B
+    let res = ""
+    let res1 = "",
+        res2 = "" 
+    let display = "<div>"
+    for (let i = 3, j = 5, ij = 15 ; i,j, ij < 100 ; i = i + 3, j = j + 5, ij = ij + 15) {
+        // res = res + "<tr>";
+  
+        res = i, res1 = j, res2 = ij;
+        // res++, res1++, res2++;
+        // document.write(res2 + " ,"  + " chia het cho 15 nen goi la " + ("<span style='color:red'>" + FB + "</span>") + "<br>");
+        // document.write(res1 + " ,"  + " chia het cho 5 nen goi la " + ("<span style='color:red'>" + B + "</span>") + "<br>");
+        document.write(res + " ,"  + " chia het cho 3 nen goi la " + ("<span style='color:red'>" + F + "</span>") + "<br>" ); 
+        display = display + "</table>"
+    } 
+    display = display + "</div>"
+</script>
+<!-- <script>
+ for (i=1; i<=3 ; i++) {
+        display = display + "<tr>"
+        
+        for (i=1 ; i <=3 ; i++) {
+            display = display + "<td>"  + i + "</td>"
+            }
+        display = display + "</tr>";
+    }
+    display = display + "</table>";
+    document.write(display);
+}) -->
+<html>
+
+
+
+
+</script>
+</html>

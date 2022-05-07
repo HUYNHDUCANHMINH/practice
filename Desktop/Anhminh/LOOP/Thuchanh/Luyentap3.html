@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="dis1"></p>
+    <p id="dis"></p>
+</body>
+<script>
+    // document.getElementById("Nhan").addEventListener("click", () => {
+    // let Input_n = prompt("Nhan mot so n vao day : ")
+    // let max = parseInt(Input_n);
+    // document.getElementById("display").innerHTML = "Day so Fibonacci toi " + max + " la : ";
+        let n = 1 //Fn
+        let F1 = 0 //F1
+        let F0 = 0  //F0
+        let m = 0
+        let dis = document.getElementById("dis");
+        //let res =null
+         // n = 2 ==> F2 = F1 + F0
+                // ==> 
+            do { 
+                F1 = n;
+                n = n + F0;
+                F0 = F1
+                dis.innerHTML += "So thu " + (m+1) + " la : <span>" + n + "</span>" + "<br>";
+                if ( n % 5 == 0 )
+                    break
+                m++; // dieu kien de xac dinh vong lap xay ra
+                }
+            while ( m < 20);
+</script>
+</html>

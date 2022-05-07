@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tinh tong cac so trong khoang</h1>
+    <input type="text" id="nhap1" placeholder="nhap so thu a vao day">
+    <input type="text" id="nhap2" placeholder="nhap so thu b vao day"><br>
+    <button id="get">Test</button>
+    <p id="chuoi"></p>
+    <p id="total"></p>
+</body>
+</html>
+<script>
+    document.getElementById("get").addEventListener("click",() => {
+        let a = document.getElementById("nhap1").value;
+        let b = document.getElementById("nhap2").value;
+        a = parseInt(a);
+        b = parseInt(b);
+    let display;
+    display = ""
+    let i = 0
+        document.getElementById("total").innerHTML = "Tong so tu " + a + " den " + b + " la : " + (((b-a)+1)*(b+a))/2;
+        for (i=a; i <= b ; i=i+1, a++ ) {
+        display += a + "<br>";
+           document.getElementById("chuoi").innerHTML = display; 
+            if ( display >= b) {
+                break;
+    }
+}})
+     
+</script>

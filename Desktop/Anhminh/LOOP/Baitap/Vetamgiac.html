@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ve tam giac hinh (*******)</h1><br>
+    <p id="draw" text-align="center"></p>
+    
+</body>
+</html>
+<script>
+    let d = document.getElementById("draw");
+    let show = ""
+    let p = "*"
+    let i = ""
+        for (let i = 0 ; i < 5 ; i = i+1) {
+             for ( let j = 0 ; j <= i; j++) {
+              show += p
+        } show += ("<br>") 
+        }  
+        show += ("<br>") + ("<hr border='10px' color='red' heigh='5' width='100%'>")
+        show += ("<br>")
+
+        for (let i = 5; i > 0 ; i = i-1 ) {
+            for (let j = 0 ; j < i ; j++) {
+                show += p
+            } show += ("<br>")
+        }
+
+        show += ("<br>") + ("<hr border='10px' color='red' heigh='5' width='100%'>")
+        show += ("<br>")
+
+        for (let i = 5; i >= 1; i--) {
+            for (let j = 1; j < i; j++) {
+                show += "&ensp;"
+                }
+                for (let j = 1; j <= (6 - i); j++) {
+                    show += "*"
+                    }
+        show += "<br>"
+        }  
+        show += ("<br>") + ("<hr border='10px' color='red' heigh='5' width='100%'>")
+        show += ("<br>")
+
+        for (let i = 5; i >= 0; i--) {
+            for (let j = 0; j < i; j++) {
+                show += "*"
+            }
+                for (let j = 6; j >= (6 - i); j--) {
+                    show += "&ensp;"
+                    }
+        show += "<br>"
+        }  
+        show += ("<br>") + ("<hr border='10px' color='red' heigh='5' width='100%'>")
+        show += ("<br>")
+        //show += ("<p text-align=center>")
+        //show += ("</p>") 
+        d.innerHTML= show
+</script>

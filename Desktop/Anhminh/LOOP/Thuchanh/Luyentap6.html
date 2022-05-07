@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p>Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên.</p>
+    <p id="show"></p>
+    <p id="show1"></p>
+</body>
+    <script>
+        let i = 7
+        let j = ""
+        let e = ""
+        // let sum = null
+        let m = ""
+        for ( j = 1 ; (i * j ) <= 210 ; j++) {
+            e = i * j ;
+            m += e;
+            m++;
+            //do {  
+                document.write(" So thu " + (j) +  " chia het cho 7 la : "  + e + "<br>");
+                document.getElementById("show").innerHTML = "Tong so la : " + ("<span id='show' style='color:red'>" + m + "<span>" ) + ("<br>")
+                document.getElementById("show1").innerHTML = "Tong so la : " + ("<span id='show' style='color:red'>" + (7*30*(29)/2) + "<span>" ) 
+                
+              
+             //} while ( j < 30 )
+                // break
+        } //document.write(e)
+        //      for ( )
+
+
+        //     // sum = sum*j;
+        //     // if ( sum % 7 == 0 )
+        //     //     m = sum;
+        //     //     document.write(sum + "<br>")
+        //     //     j++;
+        //     //     m++;
+        // } while (m<30);
+    </script>
+</html>

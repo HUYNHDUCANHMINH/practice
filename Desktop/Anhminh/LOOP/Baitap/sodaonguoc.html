@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>In ra so dao nguoc</h1>
+    <input type="text" id="input" placeholder="Nhap so vao day"> 
+    <button id="print">Print</button>
+    <p id="kq"></p>
+    <p id="test"></p>
+</body>
+</html>
+<script>
+    document.getElementById("print").addEventListener("click",() => {
+        let value = document.getElementById("input").value;
+        let value1 =""
+        while ((value % 10) != 0) {
+            value1 += value % 10;
+            value = Math.floor(value/10);
+        }
+        document.getElementById("kq").innerHTML = "Ket qua so dao nguoc la : " + value1;
+            if (value1%7 == 0) {
+                document.getElementById("test").innerHTML = value1 + " chia het cho 7"
+            }
+            else 
+                document.getElementById("test").innerHTML = value1 + " khong chia het cho 7"
+    })
+</script>
