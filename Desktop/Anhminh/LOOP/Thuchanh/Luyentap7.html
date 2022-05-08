@@ -18,17 +18,22 @@
     let FB = F + B
     let res = null,
         res1 = null,
-        res2 = null; 
+        res2 = null;
     let i = 0,
-        j = -5,
+        j = 0,
         ij = -15;
         // KET QUA CHIA HET CHO 15
         while ( ij < 100 ) {
             ij = ij + 15
             res2 = ij
-             if ( res2 > 100 ) // DIEU KIEN DE THOAT VONG LAP
+            if ( res2 == 0 ) 
+                document.write(res2 + " ,"  + " la so dac biet chia het cho 3 va 5 nen goi chung la " + ("<span style='color:red'>" + FB + "</span>") + "<br>"
+            + "<hr border='10px' color='red' heigh='5' width='100%'>");
+                if ( res2 - 15 < 0)
+                continue
+                if ( res2 > 100 ) // DIEU KIEN DE THOAT VONG LAP
                 break;
-            document.write(res2 + " ,"  + " chia het cho 15 nen goi la " + ("<span style='color:red'>" + FB + "</span>") + "<br>"
+            document.write(res2 + " ,"  + " chia het cho 3 va 5 nen goi la " + ("<span style='color:red'>" + FB + "</span>") + "<br>"
             + "<hr border='10px' color='red' heigh='5' width='100%'>");
             }
             // KET QUA CHIA HET CHO 5
@@ -42,38 +47,11 @@
                 }
             // KET QUA CHIA HET CHO 3
                 for ( i = 0 ; i < 100 ;  i = i + 3) {
-                res = i;
+                res = i + 3;
+                if (res + 3 > 102) // DIEU KIEN DE THOAT VONG LAP
+                    break
                 document.write(res + " ,"  + " chia het cho 3 nen goi la " + ("<span style='color:red'>" + F + "</span>") + "<br>"
                 + "<hr border='10px' color='orange' heigh='5' width='100%'>");
                 }
-                
-                
-                
-
-         // res = res + "<tr>";  
-        // res++, res1++, res2++;
-         //display = display + "</table>"
-        
-        
-   
-    //display = display + "</div>"
-</script>
-<!-- <script>
- for (i=1; i<=3 ; i++) {
-        display = display + "<tr>"
-        
-        for (i=1 ; i <=3 ; i++) {
-            display = display + "<td>"  + i + "</td>"
-            }
-        display = display + "</tr>";
-    }
-    display = display + "</table>";
-    document.write(display);
-}) -->
-<html>
-
-
-
-
 </script>
 </html>

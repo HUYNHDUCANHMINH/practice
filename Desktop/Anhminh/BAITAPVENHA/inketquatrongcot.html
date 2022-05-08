@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            background-color:rgb(74, 80, 68);
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+<script>
+    let num = 1
+    let blank = "***"
+    let data = "<table border='1' width = '100%' cellspacing='0' cellpadding='3'> <tr><th>Chia het cho 7</th><th>Chia het cho 9</th><th>Chia het cho 11</th><th>Chia het cho 13</th></tr>"
+    while ( num < 1000) {
+        data += "<tr>";
+            if ( num % 7 == 0 ) {
+                data += "<td style='background-color:aqua'>" + num + "</td><td><td><td>"
+                } else if ( num % 9 == 0) {
+                    data += "<td><td align='middle' style='background-color:orange'>" + num + "</td><td><td>"
+                }   else if ( num % 11 == 0 ) {
+                        data += "<td><td><td align='right' style='background-color:cadetblue'>" + num + "</td><td>"
+                }       else if (num % 13 == 0){
+                        data += "<td><td><td><td style='background-color:chartreuse'>" + num + "</td>"
+                }
+        data += "</tr>"
+        num++
+    }
+    data += "</table>";
+    document.write(data)
+
+</script>
+</html>
