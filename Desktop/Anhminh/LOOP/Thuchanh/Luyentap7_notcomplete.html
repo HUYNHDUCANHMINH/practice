@@ -13,25 +13,50 @@
     <p id="d1"></p>
 </body>
 <script>
-   
     let F = "Fizz"
     let B = "Buxx"
     let FB = F + B
-    let res = ""
-    let res1 = "",
-        res2 = "" 
-    let display = "<div>"
-    for (let i = 3, j = 5, ij = 15 ; i,j, ij < 100 ; i = i + 3, j = j + 5, ij = ij + 15) {
-        // res = res + "<tr>";
-  
-        res = i, res1 = j, res2 = ij;
+    let res = null,
+        res1 = null,
+        res2 = null; 
+    let i = 0,
+        j = -5,
+        ij = -15;
+        // KET QUA CHIA HET CHO 15
+        while ( ij < 100 ) {
+            ij = ij + 15
+            res2 = ij
+             if ( res2 > 100 ) // DIEU KIEN DE THOAT VONG LAP
+                break;
+            document.write(res2 + " ,"  + " chia het cho 15 nen goi la " + ("<span style='color:red'>" + FB + "</span>") + "<br>"
+            + "<hr border='10px' color='red' heigh='5' width='100%'>");
+            }
+            // KET QUA CHIA HET CHO 5
+            while ( j <= 100 ) {
+                j = j + 5;
+                res1 = j;
+                if ((res1) > 104) // DIEU KIEN DE THOAT VONG LAP 
+                    break;
+                document.write(res1 + " ,"  + " chia het cho 5 nen goi la " + ("<span style='color:red'>" + B + "</span>") + "<br>"
+                + "<hr border='10px' color='blue' heigh='5' width='100%'>");
+                }
+            // KET QUA CHIA HET CHO 3
+                for ( i = 0 ; i < 100 ;  i = i + 3) {
+                res = i;
+                document.write(res + " ,"  + " chia het cho 3 nen goi la " + ("<span style='color:red'>" + F + "</span>") + "<br>"
+                + "<hr border='10px' color='orange' heigh='5' width='100%'>");
+                }
+                
+                
+                
+
+         // res = res + "<tr>";  
         // res++, res1++, res2++;
-        // document.write(res2 + " ,"  + " chia het cho 15 nen goi la " + ("<span style='color:red'>" + FB + "</span>") + "<br>");
-        // document.write(res1 + " ,"  + " chia het cho 5 nen goi la " + ("<span style='color:red'>" + B + "</span>") + "<br>");
-        document.write(res + " ,"  + " chia het cho 3 nen goi la " + ("<span style='color:red'>" + F + "</span>") + "<br>" ); 
-        display = display + "</table>"
-    } 
-    display = display + "</div>"
+         //display = display + "</table>"
+        
+        
+   
+    //display = display + "</div>"
 </script>
 <!-- <script>
  for (i=1; i<=3 ; i++) {
