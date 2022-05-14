@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Sample Screen</p>
+    <hr width="100%">
+    <br>
+    <input type="text" id="txtValue"/>
+    <input type="button" id="btnAdd" value="Add" onclick="add_element_to_array();"/>
+    <input type="button" id="btnDisplay" value="Display" onclick="display_array();"/>
+    <button onclick="total();">Total</button>
+    <!-- <button id="btnAdd" value="Add" onclick="add_element_to_array();">Add</button>
+    <button id="btnDisplay" value="Display" onclick="display_array();">Display</button> -->
+    <div id="result"></div>
+    <div id="res1"></div>
+</body>
+    <script>
+        let x = 0
+        let array = Array()
+        // let input = document.getElementById("txtValue").value;
+        function add_element_to_array() {
+        array[x] = document.getElementById("txtValue").value;
+        alert("Element: " + array[x] + " Added at index " + x);
+        x++;
+        document.getElementById("txtValue ").value = "";
+}
+        function display_array() {
+    let e = "<hr/>";
+    for (let i = 0; i < array.length; i++) {
+        e += "Element " + i + " = " + array[i] + "<br/>"
+    }
+       
+        document.getElementById("result").innerHTML = e;
+}   
+    function total() {
+        let y = array[x];
+        // y = parseInt(y)
+        let total =""
+        if ( y==0) {
+            alert("ban phai nhap gia tri lon hon 0 vao day")
+        } else if ( y / 1 == false) {
+            alert("Ban ko dc nhap chu cai vao day")
+        }   else 
+                for ( x=0; x < array.length-1; x++) {
+                    total += y
+                    y++;
+                    document.getElementById("res1").innerHTML = total
+                }
+    }
+    </script>
+</html>
