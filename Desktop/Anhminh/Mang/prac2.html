@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input" placeholder="Nhap mot gia tri">
+    <button id="search" onclick="search();">Search</button>
+    <p><span id="result"></span></p>
+    <p id="result1"></p>
+    <p id="result2"></p>
+    <p id="result3"></p>
+    <p id="result4"></p>
+</body>
+<script>
+    let array = [1,3,5,7,9,11,19,58,89,"a","b","d","cf"];
+    let add = document.getElementById("input").value;
+    add = parseInt(add);
+    document.getElementById("result").innerHTML = array;"do dai cua chuoi la mot so chan"
+    document.getElementById("result1").innerHTML = array.length;
+    let length = array.length
+        if (parseInt(length) %2 == 0) {
+            document.getElementById("result2").innerHTML = "do dai cua chuoi la mot so chan"
+        }   else 
+            document.getElementById("result2").innerHTML = "do dai cua chuoi la mot so le"
+    
+
+    function search () {
+        let add = document.getElementById("input").value;
+        for ( let i = 0 ; i < array.length ; i++) {
+            if (add == array[i]) {
+            document.getElementById("result3").innerHTML = array[i] + " dc tim thay o vi tri " + i + " trong mang";
+    }}}
+    array.unshift(18)
+    
+    array.push("I love you so much")
+    document.getElementById("result4").innerHTML = array + " : do dai length cua mang la " + array.length
+</script>
+</html>

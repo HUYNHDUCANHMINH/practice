@@ -25,8 +25,9 @@
         document.getElementById("kq").innerHTML = "Ket qua so dao nguoc la : " + value1;
             if (value1%7 == 0) {
                 document.getElementById("test").innerHTML = value1 + " chia het cho 7"
-            }
-            else 
-                document.getElementById("test").innerHTML = value1 + " khong chia het cho 7"
+            } else if (value1 % 9 == 0)
+                document.getElementById("test").innerHTML = value1 + " chia het cho 9"
+                else 
+                document.getElementById("test").innerHTML = value1 + " khong chia het cho 7 va 9"
     })
 </script>
