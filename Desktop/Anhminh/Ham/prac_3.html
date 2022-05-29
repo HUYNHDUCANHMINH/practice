@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="arrayLenght"></p>
+    <p id="result" style="color:red;"></p>
+    <p id="result1" style="color:blue;"></p>
+    <p id="result2" style="color:orange;"></p>
+    <p id="result3" style="color:brown;"></p>
+
+
+</body>
+<script>
+    let arr1 = [3, 5, 1, 8, -3, 7, 8];
+    let arr2 = [7, 12, 6, 9, 20, 56, 89];
+    let arr3 = [];
+    let arr4 = [0, 0, 0, 0, 0, 0];
+    let array_new = new Array(arr1 + "," + arr2 + "," + arr3 + "," + arr4)
+    // document.write(array_new)
+    document.getElementById("arrayLenght").innerHTML = array_new;
+    function minValue (arr) {
+        let min = arr[0]
+        for ( let i = 0 ; i < arr.length ; i++) {
+            if ( min > arr[i]) {
+                min = arr[i]
+            }
+        } return min;
+    } 
+    let minArr1 = minValue(arr1)
+        if (arr1.length < 1) {
+            alert("Khong co phan tu nao trong mang de kiem tra")
+        } else {
+            document.getElementById("result").innerHTML = minArr1;
+            }
+    let minArr2 = minValue(arr2);
+        document.getElementById("result1").innerHTML = minArr2
+    let minArr3 = minValue(arr3);
+        arr3.length < 1 ? document.getElementById("result2").innerHTML = "-1" : document.getElementById("result2").innerHTML = minArr3
+           
+</script>
+</html>

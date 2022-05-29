@@ -7,23 +7,21 @@
     <title>Document</title>
 </head>
 <body>
-    <p style="color:red">Dao nguoc cac phan tu trong mang</p>
+    <p style="color:red">Tim gia tri nho nhat trong mang</p>
     <p id="result"></p>
     <p id="result1"></p>
-   
 </body>
-<script>
-    let array = [23,46,58,12,69,14,24,78,36,21,58,25,36,-14,9,-5,7,-3]
-    let x = array.length
-    // let y = array[x-1]
-    let re_array = []
-    let y = ""
-    document.getElementById("result").innerHTML = array + " va do dai cua mang la : " + x + ", so cuoi cung cua mang la : " + array[x-1]
-    for (let i = 1 ; i < x + 1 ; i++) {
-        y = array[x-i]
-        re_array.push(y)
-        document.getElementById("result1").innerHTML = re_array + " va do dai cua mang la : " + re_array.length
-    }
-
-</script>
+    <script>
+        let array = [-1,8,5,4,-4,6,-5]
+        let min = array[0];
+        let x = array.length
+        //let y = min
+        document.getElementById("result").innerHTML = "<span style='color:blue'>Cac phan tu trong mang la : </span>" + array + ", Do dai cua mang la " + x
+        for ( let i = 0 ; i < x ; i++) {
+            if (min > array[i]) {
+                min = array[i]
+                document.getElementById("result1").innerHTML = min + " la so nho nhat trong mang co do dai la " + x
+            }
+        }
+    </script>
 </html>

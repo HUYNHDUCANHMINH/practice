@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let a = "Red",
+        b = "Green",
+        c = "White",
+        d = "Black",
+        array =[];
+        array.push(a,b,c,d);
+        document.write("Sau khi su dung ham push : Cac phan tu trong mang la " + "<span style='color:red'>" + array + "</span>" + ", va do dai cua mang la : " + array.length) ;
+        array.unshift("Orange");
+        document.write("<br>" + "Sau khi su dung ham unshift : Cac phan tu trong mang la " + "<span style='color:red'>" + array + "</span>" + ", va do dai cua mang la : " + array.length);
+        array.pop();
+        document.write("<br>" + "Sau khi su dung ham pop : Cac phan tu trong mang la " + "<span style='color:red'>" + array + "</span>" + ", va do dai cua mang la : " + array.length);
+        array.sort();
+        document.write("<br>" + "Sau khi su dung ham sort : Cac phan tu trong mang la " + "<span style='color:red'>" + array + "</span>" + ", va do dai cua mang la : " + array.length);
+        array.reverse();
+        document.write("<br>" + "Sau khi su dung ham reverse : Cac phan tu trong mang la " + "<span style='color:red'>" + array + "</span>" + ", va do dai cua mang la : " + array.length);
+        let number = 123456789
+        array.push("Aqua","Black","Brown",number);
+        document.write("<br>" + "Sau khi su dung ham push : Cac phan tu trong mang la " + "<span style='color:red'>" + array + "</span>" + ", va do dai cua mang la : " + array.length);
+        // document.getElementById("dis").innerHTML = array
+    let newarray = [2,-1,5,4,9,-5,12,15];
+    document.write("<br>" + "Cac phan tu trong mang la : " + "<span style='color:blue'>" + newarray + "</span>" + ", va do dai cua mang la : " + newarray.length);
+    // let random_ray = []
+    // random_ray = Math.floor(Math.ramdom()*101)
+    // document.write(random_ray);
+    function findMin(arr) {
+   var min = arr[0];
+   for (var i = 1; i < arr.length; ++i) {
+      if (arr[i] < min) {
+         min = arr[i];
+      }
+   }
+   return min;
+} document.write(min)
+
+
+</script>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p style="color:red">Caro Game Simple</p>
+    <input type="text" id="nhap1" placeholder="Nhap gia tri so vao day"/><br>
+    <input type="text" id="nhap2" placeholder="nhap gia tri so vao day"/><br>
+    <button id="thaydoi" onclick="change();"> Change Possition And Value </button>
+    <hr width="100%" color="red">
+    <p id="dis" style="text-align:center"></p>
+    <p id="dis1" style="text-align:center"></p>
+    <p id="dis2" style="text-align:center"></p>
+    <p id="dis3" style="text-align:center"></p>
+    <p id="dis4" style="text-align:center"></p>
+    <p id="dis5" style="text-align:center"></p>
+    <p id="dis6" style="text-align:center"></p>
+    <p id="dis7" ></p>
+    
+</body>
+<script>
+    let array = [
+        [0,0,0,0,0],
+        [0,0,0,0,0],
+        [0,0,0,0,0],
+        [0,0,0,0,0],
+        [0,0,0,0,0]
+];
+
+        document.getElementById("dis").innerHTML = array[0],
+        document.getElementById("dis1").innerHTML = array[1],
+        document.getElementById("dis2").innerHTML = array[2],
+        document.getElementById("dis3").innerHTML = array[3],
+        document.getElementById("dis4").innerHTML = array[4] + "<br/>" + '<hr width="100%" color="orange">'
+
+    let re_array = ""
+        function change() {
+        let input = +document.getElementById("nhap2").value;
+            if ( input > array.length-1 || input < 0) {
+                alert("Ban da nhap sai gia tri. Xin vui long nhap lai")
+            }
+        let get = +document.getElementById("nhap1").value;
+            if ( get > array.length-1 || get < 0) {
+                alert("Ban da nhap sai gia tri. Xin vui long nhap lai")
+            }
+        array[input][get] = "x"
+        document.getElementById("dis5").innerHTML = "Gia tri cua mang da dc thay do la : " + array  + " va do dai cua mang la " + array.length
+        for ( let i = 0 ; i < array.length ; i++) {
+            re_array += "<br/>";
+            for (let j = 0 ; j < array.length ; j++) {
+                re_array += array[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+            } 
+        } 
+        document.getElementById("dis6").innerHTML +=  "<br/>" + '<hr width="100%" color="blue">' + re_array + "<br/>" + '<hr width="100%" color="red">'
+    }
+</script>
+</html>

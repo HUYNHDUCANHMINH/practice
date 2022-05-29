@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function startGame(answer) {
+        let res = ""
+        if (answer) {
+            res = "That tuyet. Chung ta bat dau choi game nao!!!"
+        } else {
+            res = " Hen gap lai ban lan sau!!!"
+        }
+        return res;
+    }
+        let confirmGame = confirm("Ban co muon choi game???");
+        let ans = startGame(confirmGame);
+        alert(ans)
+    
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Temperature Converte</h1>
+    <h2>Type a value in the Fahrenheit field to convert the value to Celcius:</h2><br>
+    Fahrenheit <input type="number" style="color: blue" id="input" placeholder="Input the numbers" oninput="convert(this.value)" onchange="convert(this.value)"><br><br>
+    <p>Celsius: <span id="result" style="color: red"></span></p>
+    <p id="notice1" style="color:orange"></p>
+    <p id="notice2" style="color:aqua"></p>
+
+</body>
+    <script>
+        function convert() {
+            let index = +document.getElementById("input").value;
+            let temp = (index - 32) / 1.8
+            document.getElementById("result").innerHTML= temp
+            if (temp <= 18) {
+                document.getElementById("notice1").innerHTML = "Hom nay nhiet do thap, ban phai nen mac ao am nhieu vao"
+            } else if (temp >= 28) {
+                document.getElementById("notice1").innerHTML = "Hom nay nhiet do cao, ban nen uong nuoc nhieu vao"
+            } else {
+                document.getElementById("notice1").innerHTML = "Hom nay thoi tiet rat tot, chuc ban co mot ngay vui ve"
+                document.getElementById("notice2").innerHTML = "Good luck to day"
+            }
+        } convert()
+
+    </script>
+</html>

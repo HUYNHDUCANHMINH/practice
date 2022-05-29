@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="dis"></p>
+    <p id="dis1"></p>
+    <input type="text" id="nhap" placeholder="nhap mot chuoi so vao day">
+    <button onclick="nhanvaoday()">Display</button><br>
+</body>
+<script>
+        let arr = []
+        // let n_array = []
+    function nhanvaoday() {
+            let res = document.getElementById("nhap").value;
+            let text = (res)
+            let n_text = text.split('')
+
+        //    let res1 = String(res)
+            arr[0] = n_text
+
+
+
+
+        //    let arr = [string[0]];
+        //        for ( let i = 0 ; i < arr.length ; i++) {
+        //            if (  % 2 === 0) {
+        //                if ( string % )
+        //            }
+        //        }
+
+           
+        document.getElementById("dis").innerHTML = arr
+        // document.getElementById("dis1").innerHTML = n_array
+       }
+   
+</script>
+</html>

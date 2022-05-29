@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p style="color:red">Dao nguoc cac phan tu trong mang</p>
+    <p id="result"></p>
+    <p id="result1"></p>
+   
+</body>
+<script>
+    let array = [23,46,58,12,69,14,24,78,36,21,58,25,36,-14,9,-5,7,-3]
+    let x = array.length
+    // let y = array[x-1]
+    let re_array = []
+    let y = ""
+    document.getElementById("result").innerHTML = array + " va do dai cua mang la : " + x + ", so cuoi cung cua mang la : " + array[x-1]
+    for (let i = 1 ; i < x + 1 ; i++) {
+        y = array[x-i]
+        re_array.push(y)
+        document.getElementById("result1").innerHTML = re_array + " va do dai cua mang la : " + re_array.length
+    }
+
+</script>
+</html>
