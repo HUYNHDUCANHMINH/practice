@@ -7,21 +7,28 @@
     <title>Document</title>
 </head>
 <body>
-    <p style="color:red">Tim gia tri nho nhat trong mang</p>
-    <p id="result"></p>
-    <p id="result1"></p>
+    <p style="color:red">Tim gia tri Lon nhat va nho nhat trong mang</p>
+    <p id="result" style="color:red"></p>
+    <p id="result1" style="color:blue;"></p>
+    <p id="result2" style="color:brown ;"></p>
+
 </body>
     <script>
         let array = [-1,8,5,4,-4,6,-5]
         let min = array[0];
         let x = array.length
-        //let y = min
+        let max = array[0] 
         document.getElementById("result").innerHTML = "<span style='color:blue'>Cac phan tu trong mang la : </span>" + array + ", Do dai cua mang la " + x
         for ( let i = 0 ; i < x ; i++) {
             if (min > array[i]) {
                 min = array[i]
                 document.getElementById("result1").innerHTML = min + " la so nho nhat trong mang co do dai la " + x
-            }
+            } 
+        for ( let i = 0 ; i < array.length ; i++)
+            if (max < array[i]) {
+                max = array[i]
+                document.getElementById("result2").innerHTML = max + " la so lon nhat trong mang co do dai la " + x
+        }
         }
     </script>
 </html>
