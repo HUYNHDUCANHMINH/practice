@@ -9,19 +9,16 @@
 <body>
     <h1>Chuyen doi giua Feet va Meter</h1>
     <input type="number" id="feet" onchange="feet_to_meter(this.value)" oninput="feet_to_meter(this.value)">
-    <button id="changeMeter" onclick="feet_to_meter()">Conver to Meter</button>
-    <button id="changeFeet" onclick="meter_to_feet()">Conver to Feet</button>
+    <!-- <button id="changeMeter" onclick="feet_to_meter()">Conver to Meter</button>
+    <button id="changeFeet" onclick="meter_to_feet()">Conver to Feet</button> -->
     <p id="res" style="color:red"></p>
     <p id="res1" style="color:blue"></p>
-
-    
 </body>
 <script> 
     function feet_to_meter() { // su dung bat su kien oninput nen ham nay se thuc hien ngay khi thay doi gia tri tai the input
         let input = +document.getElementById("feet").value;
         document.getElementById("res").innerHTML= "Gia tri chuyen doi tu " + input + " Feet sang Meter la : " + 0.305 * input + "<br/>"
         document.getElementById("res1").innerHTML ="Gia tri chuyen doi tu " + input + " Meter sang Feet la : " + 3.279 * input + "<br/>"
-
     }
 </script>
 </html>

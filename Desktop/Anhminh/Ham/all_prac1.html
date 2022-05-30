@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="res2"></p>
+    <p id="res" style="color: red;"></p>
+    <p id="res1" style="color: blue;"></p>
+</body>
+<script>
+    let number = []
+    function prepare () {
+        for ( let i = 0 ; i < 100 ; i++) {
+            number [i] = Math.floor(Math.random() * 100 + 1)
+        }
+        document.getElementById("res2").innerHTML = "Cho mot day so tu chon tu 1 den 100 " + "<br/>" + "<br/>" + number
+        let num = number.splice(0,2);
+        document.getElementById("res").innerHTML = "Trong day so tren chon lua ra 2 so dau tien la " + num + "<br/>"
+        let a = num[0]
+        let b = num[1]
+            if (a > b) {
+                document.getElementById("res1").innerHTML = "Gia tri so dau tien la " + a + " lon hon so thu hai la " + b
+            } else {
+                let result = a + b
+                document.getElementById("res1").innerHTML = "Gia tri so thu hai la " + b + " lon hon so thu hai la " + a + " va tong cua hai so la " + result
+            }
+     } prepare()
+    
+        
+
+</script>
+    
+</html>
