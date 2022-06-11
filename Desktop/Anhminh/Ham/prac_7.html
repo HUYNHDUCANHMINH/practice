@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="dis"></p>
+    <p id="dis1"></p>
+    <p id="dis2"></p>
+    <p id="dis3"></p>
+    <p id="dis4"></p>
+    <p id="dis5"></p>
+</body>
+<script>
+    let num_Duong = []
+    for ( let i = 0 ; i < 100 ; i ++) {
+        num_Duong[i] = Math.floor(Math.random() * 100);
+        // let zero = num_Duong.indexOf(0)
+        if (num_Duong[i] == 0) {
+          num_Duong.splice(i,1,"101")
+        }
+    }
+    document.getElementById("dis").innerHTML = num_Duong
+    function so_nguyen_duong() {
+        let num1 = num_Duong.slice(0,3)
+        document.getElementById("dis1").innerHTML = "3 so nguyen duong tu chon la : " + num1
+        let a = num1[0];
+        let b = num1[1];
+        let c = num1[2];
+            if ( b < a && b < c) {
+                document.getElementById("dis2").innerHTML = ("so nguyen duong nho nhat la : " + b)
+                } else if ( c < a ) { 
+                    document.getElementById("dis2").innerHTML = ("so nguyen duong nho nhat la : " + c) 
+                } else {
+                    document.getElementById("dis2").innerHTML= ("so nguyen duong nho nhat la : " + a)
+                }
+            }
+    so_nguyen_duong()
+    
+    // so nguyen am
+
+    let num_Am = []
+    for ( let i = 0 ; i < 100 ; i ++) {
+        num_Am[i] = Math.floor(Math.random() * (-100));
+        if (num_Am[i] == 0) {
+          num_Am.splice(i,1,"-101")
+        }
+    }
+    document.getElementById("dis3").innerHTML = num_Am
+    function so_nguyen_am () {
+        let num2 = num_Am.slice(0,3)
+        let d = num2[0];
+        let e = num2[1];
+        let f = num2[2];
+        document.getElementById("dis4").innerHTML = "3 so nguyen am tu chon la : " + num2
+            if ( e < d && e < f) {
+                document.getElementById("dis5").innerHTML = ("so nguyen am nho nhat la : " + e)
+                } else if ( f < d ) { 
+                    document.getElementById("dis5").innerHTML = ("so nguyen am nho nhat la : " + f)
+                } else {
+                    document.getElementById("dis5").innerHTML = ("so nguyen am nho nhat la : " + d)
+                }
+            }
+    so_nguyen_am() 
+    
+</script>
+</html>

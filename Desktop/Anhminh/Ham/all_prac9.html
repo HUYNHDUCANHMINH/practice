@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Truyen vao mang so nguyen bat ky, doi ngc mang so
+    <p id="display" style="color:red"></p>
+    <p>Mang doi ngc cua mang tren la : </p>
+    <p id="dis1" style="color:blue"></p>
+
+</body>
+<script>
+    
+        let array = new Array(30)
+            for ( let i = 0 ; i < array.length ; i++) {
+                array[i] = Math.floor(Math.random()* 30 + 1)
+                document.getElementById("display").innerHTML = array + "<br/>"  + "co do dai cua mang la " + array.length
+            } 
+        let newArray = []
+        function back_array(array) {
+                for ( let j = 0 ; j < array.length ; j++){
+                newArray[j] = array[array.length-1-j]
+                document.getElementById("dis1").innerHTML = newArray + "<br/>" + "co do dai cua mang la " + newArray.length
+            }
+        }
+    back_array(array)
+    
+</script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Kiem tra mot so nhap vao co phai la so nguyen duong hay khong</h1>
+    <input type="text" id="get" oninput="test_number(this.value)" placeholder="Input any number here">
+    <!-- <button id="test_number" onclick="test_number()">Test</button> -->
+    <p id="display" style="color:red"></p>
+</body>
+<script>
+    function test_number() {
+        let input = document.getElementById("get").value;
+            if (input > 0) {
+                document.getElementById("display").innerHTML = "Ban vua nhap " + input + " la mot so nguyen duong"
+            } else if (input < 0) {
+                document.getElementById("display").innerHTML = "Ban vua nhap " + input + " la mot so nguyen am "
+            } else
+            document.getElementById("display").innerHTML = "Ban vua nhap " + input + " la mot so nguyen dac biet"
+        }
+    
+    test_number()
+
+</script>
+</html>

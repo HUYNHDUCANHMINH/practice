@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>TInh Chu vi va Dien tich hinh trong</h1>
+    <input type="number" id="get" oninput="circle(this.value)">
+    <p id="display" style="color:red"></p>
+</body>
+<script>
+    function circle() {
+            let input = document.getElementById("get").value
+            let area_circle = Math.pow(input,2)*Math.PI.toFixed(2)
+            let chuvi = input*Math.PI.toFixed(2)
+            document.getElementById("display").innerHTML = "Dien tich hinh tron co duong kinh " + input + " la " + area_circle + "<br/>" + "Chu vi hinh tron la : " + chuvi
+         }
+         circle()
+</script>
+</html>

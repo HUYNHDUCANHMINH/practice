@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Kiem tra so nhap vao co phai la ky tu hay khong</h1>
+    <input id="get">
+    <button onclick="testInput()">Test</button>
+    <p id="display" style="color: red;"></p>
+</body>
+<script>
+    function testInput() {
+        let input = document.getElementById("get").value;
+        if (!isNaN(input) == false) {
+            document.getElementById("display").innerHTML = "Ban vua nhap ky tu vao khong phai la mot so, Ky tu vua nhap la : " + input
+        } else {
+            document.getElementById("display").innerHTML = "Ban vua nhap ky tu vao la mot so, Ky tu vua nhap la : " + input
+        }
+    }
+</script>
+</html>
