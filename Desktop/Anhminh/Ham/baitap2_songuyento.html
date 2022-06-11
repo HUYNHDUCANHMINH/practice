@@ -12,13 +12,22 @@
     <p id></p>
 </body>
 <script>
-    function songuyento() {
+    function so_nguyen_to(number) {
         let array = new Array(10000)
-        for ( let i = 1 ; i < array.length ; i++) {
-            if (array [i] % i == 0 ) {
-
-            }
+        let number =- +prompt("Nhap mot so Number vao day : ")
+        if (number < 2) {
+            return false
         }
+        else {
+            for ( let i = 2 ; i <= Math.sqrt(number) ; i++) {
+                if ( number % i === 0) {
+                    return false
+                }
+                }  return true
+            } 
+        }
+    function testSo_nguyen_to() {
+        
     }
 </script>
 </html>

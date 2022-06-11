@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+</body>
+<script>
+    let canvas = document.getElementById("canvas");
+    let count = 1
+    if (canvas.getContext){
+        let ctx = canvas.getContext("2d")
+    for ( let i = 10 ; i <= 500 ; i += 20) {
+        ctx.moveTo(0,i)
+        ctx.lineTo(canvas.width,i)
+        ctx.strokeStyle = "blue"
+        ctx.strokeWidth = count
+        ctx.stroke()
+        count ++
+    }
+    for ( let i = 10 ; i <= 400 ; i += 30) {
+        ctx.moveTo(i,0);
+        ctx.lineTo(i,(canvas.width)/2)
+        ctx.stroke()
+    }
+    }
+    
+</script>
+</html>

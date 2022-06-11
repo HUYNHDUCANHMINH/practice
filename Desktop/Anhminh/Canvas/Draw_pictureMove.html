@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas" width="1200" height="900" style="border: 3px solid #000000"></canvas>
+    <button onclick="start();">Start</button>;
+    <button onclick="stop()">Stop</button>;
+</body>
+<script>
+    let ctx = document.getElementById("canvas").getContext("2d");
+    let interval;
+    let y = 10;
+    let speed = 10
+    // let x = 10
+    function draw_canvas() {
+        if ( y == 800 || y == 10) {
+            speed = -speed
+        }
+        ctx.fillStyle = "aqua"
+        ctx.fillRect(100,y,240,80)
+    }
+    // function draw_canvas1(){
+    //     if ( x === 10 || x == 900) {
+    //         speed = +speed
+    //     // ctx.lineWidth = 3
+    //     ctx.lineWidth = 10
+    //     ctx.lineJoin = "bevel"
+    //     ctx.strokeStyle = "orange"
+    //     ctx.strokeRect(x,40,45,35)
+    // }
+    // }
+    function move(){
+        y += speed
+    }
+    // function move_1() {
+    //     x += speed
+    // }
+    function run() {
+        ctx.clearRect(0,0,900,900);
+        move();
+        draw_canvas(y)
+    }
+    // function run_1() {
+    //     ctx.clearRect(0,0,900,900)
+    //     move_1()
+    //     draw_canvas1(x)
+    // }
+    function start() {
+        interval = setInterval(run,50)
+    }
+    function stop() {
+        clearInterval(interval)
+    }
+</script>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="mycanvas" height="100" width=" 200" style="color: blueviolet;"></canvas>
+    <canvas id="canvas1" ></canvas>
+</body>
+<script>
+    let ctx = document.getElementById("mycanvas").getContext("2d");
+    ctx.moveTo(0,0)
+    ctx.lineTo(200,100)
+    ctx.stroke()
+    let canvas = document.getElementById("mycanvas");
+    if (canvas.getContext) {
+  var context = canvas.getContext('2d');
+  // Reset the current path
+  context.beginPath(); 
+  // Ve duong thang ngang duoi
+  context.moveTo(0,100);
+  context.lineTo(200,100);
+  //   Ve duong thang dung ben trai
+  context.moveTo(0,0)
+  context.lineTo(0,100)
+  //   Ve duong thang ngang ben tren
+  context.moveTo(0,0)
+  context.lineTo(200,0)
+  //   Ve duong thang dung ben phai
+  context.moveTo(200,0)
+  context.lineTo(200,200)
+  //    Ve Duong xeo tu trai qua phai   
+  context.moveTo(200,0)
+  context.lineTo(0,100)
+  context.strokeStyle = 'blue'
+  context.lineWidth = 4
+//   // Make the line visible
+  context.stroke();
+  
+  
+   }
+</script>
+</html>

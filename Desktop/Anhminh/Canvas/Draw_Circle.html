@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas" width="6000" height="8000"></canvas>
+</body>
+<script>
+    function Circle(x, y, radius) {
+        this.x = x
+        this.y = y
+        this.radius = radius
+    }
+    function getSelect_number() {
+        return Math.floor(Math.random() * 255)
+    }
+    function getSelect_color() {
+        let red = getSelect_number()
+        let aqua = getSelect_number()
+        let orange = getSelect_number()
+        let yellow = getSelect_number()
+        return  "rgb(" + red + "," + aqua + "," + orange + "," + yellow + ")";
+    }
+    function creatCircle() {
+    let canvas = document.getElementById("canvas");
+    if (canvas.getContext) {
+        let ctx = canvas.getContext("2d")
+        ctx.lineWidth = 20
+        ctx.strokeStyle = "blue"
+        let x = Math.floor(Math.random() * 300)
+        let y = Math.floor(Math.random() * 300)
+        let radius = Math.floor(Math.random() * 100 + 5);
+        let circle = new Circle(x,y,radius)
+        ctx.arc(circle.x,circle.y,circle.radius,0,2*Math.PI);
+        ctx.stroke()
+        let color = getSelect_color()
+        ctx.fillStyle = color
+        ctx.arc(circle.x,circle.y,radius,0,2*Math.PI);
+        ctx.fill()
+    }
+} 
+creatCircle()
+
+</script>
+</html>

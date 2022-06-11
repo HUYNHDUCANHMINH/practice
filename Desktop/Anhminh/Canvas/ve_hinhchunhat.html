@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas" width="10000" height="10000"></canvas>
+</body>
+<script>
+    let canvas = document.getElementById("canvas");
+    if (canvas.getContext) {
+        let ctx = canvas.getContext("2d")
+        let x = Math.random() * window.innerWidth;
+        let y = Math.random() * window.innerHeight;
+        ctx.lineWidth = "3";
+        ctx.strokeStyle = "red";
+        ctx.strokeRect(5, 7, 300, 250);
+        
+        ctx.lineWidth = 5
+        ctx.lineJoin = "bevel"
+        ctx.fillStyle = "blue"
+        ctx.fillRect (120,240,400,500)
+
+        ctx.lineWidth = 10
+        ctx.lineJoin = "bevel"
+        ctx.strokeStyle = "orange"
+        ctx.strokeRect(23,40,400,300)
+
+        ctx.lineWidth = 50
+        ctx.lineJoin = "round"
+        ctx.strokeStyle = "aqua"
+        ctx.strokeRect(x,y,500,450)
+
+        
+        
+    }
+</script>
+</html>

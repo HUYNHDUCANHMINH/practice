@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="display"></p>
+    <canvas id="myCanvas" width="400" height="500"></canvas>
+</body>
+<script>
+    let myVar = setInterval(myTimer,1000)
+    function myTimer() {
+        let d = new Date()
+        let t = d.toLocaleTimeString()
+        document.getElementById("display").innerHTML = "Gio hien tai la " + t 
+    }
+    let myVar1 = setInterval(setColor,500)
+    function setColor() {
+    let x = document.body;
+    x.style.backgroundColor = x.style.backgroundColor == "aqua" ? "orange" : "aqua" ,"white" 
+    }
+    function stopColor() {
+        clearInterval(myVar1)
+    }
+    var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        ctx.beginPath();
+        ctx.arc(195,250,60,0,2*Math.PI);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(260,150,68,0,2*Math.PI);
+        ctx.strokeStyle = "red"
+        ctx.lineWidth=5
+        ctx.stroke()
+</script>
+</html> 
