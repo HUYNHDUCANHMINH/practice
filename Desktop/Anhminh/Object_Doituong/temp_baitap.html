@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    class Temp {tempF; tempC; tempK
+      constructor (tempF, tempC, tempK) {
+        this.tempF = tempF
+        this.tempC = 25
+        this.tempK = tempK
+      }
+      setTempC(number) {
+        this.tempC = number
+      }
+      changeF() {
+        return (this.tempC * 9)/5 + 32
+      }  
+      changeK() {
+            return this.tempC + 273.15
+        }
+      }
+    
+    let temp = new Temp()
+    console.log(temp)
+    console.log(temp.changeF())
+    console.log(temp.changeK())
+
+    let tempC = temp.setTempC(Math.random() * 30 + (-10))
+    console.log(temp)
+    console.log(temp.changeF())
+    console.log(temp.changeK())
+
+</script>
+</html>

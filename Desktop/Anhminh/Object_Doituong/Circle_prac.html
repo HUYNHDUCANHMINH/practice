@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas" width="1500" height="1500" style="border: 1px solid"></canvas>
+</body>
+<script>
+    class Circle { x ; y ; radius ; color;
+        constructor(x, y, radius, color) {
+            this.x = x
+            this.y = y
+            this.radius = radius
+            this.color = color
+        }
+        getRadius() {
+            return this.radius
+        }
+        setRadius(number) {
+            this.radius = number
+        }
+        getArea() {
+            return Math.pow(this.radius,2) * Math.PI
+        }
+        getPitch_area() {
+            return Math.PI *2*this.radius
+        }
+        getColor() {
+            return this.color
+        }
+        selectNumber() {
+            return Math.floor(Math.random()*255)
+        }
+        setColor() {
+            var red = this.selectNumber();
+            var green = this.selectNumber();
+            var blue = this.selectNumber();
+	        return "rgb(" + red + "," + blue + "," + green +")";
+            }
+    
+        draw_circle() {
+            let ctx = document.getElementById("canvas").getContext("2d")
+            ctx.beginPath()
+            ctx.arc(this.x, this.y, this.radius, 0, 2*Math.PI)
+            ctx.fillStyle = "blue"
+            ctx.fill()
+            } 
+        draw_circle1() {
+            let ctx = document.getElementById("canvas").getContext("2d")
+            
+            let x = Math.floor(Math.random()* window.innerWidth + 1)
+            let y = Math.floor(Math.random()* window.innerHeight + 1)
+            let radius = Math.floor(Math.random() * 50 +10)
+            let color = this.setColor()
+            let circle = new Circle(x,y,radius)
+            ctx.beginPath()
+            ctx.arc(circle.x, circle.y, circle.radius, 0, 2*Math.PI)
+            ctx.fillStyle = color
+            ctx.fill()
+        }
+    }   
+    let circle = new Circle (190,452,15,"blue")
+    console.log(circle)
+    let area = circle.getArea()
+    console.log(area)
+    let pitch = circle.getPitch_area()
+    console.log(pitch)
+    let radius = circle.setRadius(100)
+    let area1 = circle.getArea()
+    console.log(area1)
+    circle.draw_circle()
+    // circle.draw_circle1()
+    let clear_myVar = clearInterval(stopTimer,4000) 
+    let myVar = setInterval(myTimer, 3000);
+    function myTimer() {
+        multiCircle()
+    }
+    function stopTimer () {
+        clearInterval(myVar,4000)
+    }
+    function multiCircle () {
+        for (let i = 0 ; i < 10 ; i++) {
+            circle.draw_circle1()
+        }
+    } 
+    // setTimeout (multiCircle,3000)
+    //  multiCircle()
+    
+</script>
+</html>

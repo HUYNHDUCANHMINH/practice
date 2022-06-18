@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		label {
+			font-size: 20px;
+			font-family: 'Times New Roman', Times, serif;
+		}
+		img {
+			width: 100%;
+			height: 50px;
+		}
+    l {
+        list-style-type: circle;
+        margin: 0;
+        padding: 1;
+        overflow: hidden;
+        background-color: #8fdc01;
+    }
+    li {
+        float: right;
+    }
+    li a {
+        color: rgb(170, 215, 58);
+        text-align: center;
+        padding: 35px
+    }
+    li a:hover {
+        background-color: #680909;
+    }
+	h1 {
+		text-align: center;
+	}
+	</style>
+</head>
+<body>
+    <canvas id="canvas" width="100%" height="40px" style="border: 1px solid"> </canvas>
+    <form >
+	<ul>
+        <li><a href="http://www.aizawa-group.co.jp"></a>AIZAWA</li>
+        <li><a href="http://www.aizawa-group.co.jp" target=_blank>Home</a></li>
+        <li><a href="https://www.aizawa-group.co.jp/about/" target=_blank>About Us</a></li>
+        <li><a href="https://www.aizawa-group.co.jp/category/news/" target=_blank>News</a></li>
+        <li><a href="https://www.recruit.aizawa-group.co.jp/" target=_blank>Career</a></li>
+        <li><a href=index.html target=_blank>Contact Us</a></li>
+		
+    </ul>
+</form>
+    <br>
+    <br>
+		
+</body>
+<script>
+    let ctx = document.getElementById("canvas").getContext("2d");
+    ctx.font = "20px Georgia";
+    ctx.fillText("AIZAWA")
+    ctx.lineWidth = window.innerWidth
+    ctx.lineJoin = "bevel"
+    ctx.fillStyle = "blue"
+    ctx.fillRect ()
+
+</script>
+</html>

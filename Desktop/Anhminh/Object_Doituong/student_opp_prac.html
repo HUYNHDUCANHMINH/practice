@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    class Student {name;age;gender;pointMath;pointChe;pointPhysic
+        constructor (name, age, gender) {
+            this.name = name
+            this.age = age
+            this.gender = gender
+        }
+        
+        set_pointMath(number) {
+            this.pointMath = number
+        }
+        set_pointChe(number) {
+            this.pointChe = number
+        }
+        set_pointPhysic(number) {
+            this.pointPhysic = number
+        }
+        getAverage_point() {
+            return (this.pointMath + this.pointChe + this.pointPhysic ) /3
+        }
+        setName(name){
+            this.name = name
+        }
+    }
+    let student = new Student ("Tu", 25, "Nam")
+    console.log(student)
+    student.set_pointMath(7)
+    student.set_pointChe(8)
+    student.set_pointPhysic(9)
+    console.log(student.getAverage_point())
+    student.setName("Minh")
+    console.log(student)
+</script>
+</html>

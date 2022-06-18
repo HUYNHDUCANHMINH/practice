@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    alert("Chua lam xong")
+    class Battery{
+        energy
+        constructor() {
+            this.energy = 0
+        }
+        setEnergy(energy) {
+            this.energy = energy
+        }
+        getEnergy() {
+            return this.energy
+        }
+        decreaseEnergy() {
+            if ( this.energy > 0) {
+                this.energy--
+            }
+        }
+    }
+    class Flash_lamp {
+        constructor () {}
+            setBattery(battery) {
+                this.battery = battery
+            }
+            getBattery_info() {
+                return this.battery.getEnergy()
+            }
+            light () {
+                if (this.status) {
+                    alert("Lighting")
+                } else {
+                    alert("Not lighting")
+                }
+            }
+            turnOn() {
+                this.status = true
+            }
+            turnOff () {
+                this.status = false
+            }
+        }
+    let battery = new Battery()
+    battery.setEnergy(10)
+
+    let flashLamp = new Flash_lamp()
+    flashLamp.setBattery(battery)
+    // Xac dinh den dang trang thoi mo
+    document.write("Battery info :" + flashLamp.getBattery_info() + "<br/>")
+    flashLamp.light()
+    document.write("Turn on<br/>")
+    flashLamp.turnOn() 
+    flashLamp.light()
+
+    document.write("Battery info:" + flashLamp.getBatteryInfo() + "<br/>");
+    document.write("Turn off<br/>")
+    flashLamp.turnOff();
+    flashLamp.light();
+
+    </script>
+</html>

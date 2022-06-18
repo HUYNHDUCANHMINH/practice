@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+    <script>
+        class Date {day;month;year;
+        constructor (day,month,year,date) {
+            this.day = day
+            this.month = month
+            this.year = year
+            // this.date = date
+        }
+        getDay() {
+            return this.day 
+        }
+        setDay(day) {
+            this.day = day
+        }
+        getMonth() {
+            return this.month
+        }
+        setMonth(month) {
+            this.month = month
+        }
+        getYear() {
+            return this.year
+        }
+        setYear(year) {
+            this.year = year
+        } 
+        // setDate() {
+        //     this.date = date
+        // }
+        // getDay_number() {
+        //     return this.daycall
+        // }
+        // setCall_day(number) {
+        //     this.daycall = getDay()
+        // }
+    }
+    let new_date = new Date (2,2,2017)
+    console.log(new_date)
+    let day = new_date.setDay(Math.floor(Math.random() * 31 + 1 ))
+    let month = new_date.setMonth(Math.floor(Math.random() * 12 +1))
+    let year = new_date.setYear(Math.floor(Math.random() * 2022 + 1))
+    // let date = Date(new_date)
+    console.log(new_date)
+    console.log(new_date.getDay())
+    console.log(new_date.getDate())
+    
+    // console.log(date.getDay_number())
+    // let date1 = new Date(x,y,z)
+    // let x = 
+    // let y = Math.floor(Math.random() * 12 +1)
+    // let z = Math.floor(Math.random() * 2022 + 1)
+    // console.log(date1)
+    </script>
+</html>

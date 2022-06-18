@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas" width="1000" height="1000" style="border: 1px solid;"></canvas>
+</body>
+<script>
+    class Rectange { width ; height ; area ; pitch
+        constructor (width, height, area, pitch) {
+            this.width = width
+            this.height = height
+            this.area = area
+            this.pitch = pitch
+        }
+        getWidth(number) {
+            this.width = number
+        }
+        getHeight(number) {
+            this.height = number
+        }
+        getArea() {
+            return this.width * this.height
+        }
+        getPitch() {
+            return (this.width + this.height) *2
+        }
+        creatRectange() {
+            let ctx = document.getElementById("canvas").getContext("2d");
+            ctx.strokeStyle = "red"
+            ctx.lineWidth = 15
+            ctx.lineJoin = "round"
+            ctx.strokeRect(56,89,150,231)
+        }
+        new_creatRectange() {
+            let ctx = document.getElementById("canvas").getContext("2d");
+            let width = Math.floor(Math.random() * 150 + 25)
+            let height = Math.floor(Math.random() * 160 + 30)
+            let rectange1 = new Rectange (width, height)
+            ctx.strokeStyle = "blue"
+            ctx.lineWidth = 15
+            ctx.lineJoin = "round"
+            ctx.strokeRect(500,600,rectange1.width,rectange1.height)
+        }
+    }
+    let rectange = new Rectange(40,50)
+    let area = rectange.getArea()
+    let pitch = rectange.getPitch()
+    console.log(rectange)
+    console.log(area)
+    console.log(pitch)
+    rectange.creatRectange()
+    rectange.new_creatRectange()
+</script>
+</html>
