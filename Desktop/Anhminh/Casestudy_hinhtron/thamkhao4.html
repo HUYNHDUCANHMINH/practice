@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <canvas id="canvas" style="border: 3px solid"></canvas>
+        <h1 class="title">Escape Wall Ball Freefall </h1><br>
+        <button id="start" onclick="start()">Start</button>
+        <button id="stop" onclick="stop()">Stop</button>
+    </div>
+</body>
+<script>
+    let canvas = document.getElementById("canvas")
+    let ctx = canvas.getContext("2d")
+    canvas.width = window.innerWidth*0.97
+    canvas.height = window.innerHeight*0.8
+    let number = 20
+    let circleArray = new Array(number); //khởi tạo mảng quả bóng
+    let interval;
+    // khởi tạo lớp hình chữ nhật chung
+    class Rectangle {
+        constructor(x, y, width, height) {
+            this.x = x;
+            this.y = y;
+            this.width = width;
+            this.height = height;
+        }
+    };
+    // khởi tạo lơp hình chữ nhật mở rộng, di chuyển đc trong game
+    class Player extends Rectangle {
+        draw = () => {
+            ctx.beginPath();
+            ctx.lineWidth = 10
+            ctx.lineJoin = "bevel"
+            ctx.strokeStyle = "orange"
+            ctx.strokeRect(this.x, this.y, this.width, this.height);
+        };
+
+        movementWithKeyBoard = (event) => {
+            switch(event.keyCode) {
+                case 37:
+                    this.x -= 10;
+                    break;
+                case 38 :
+                    this.y -= 10;
+                    break
+                case 39:
+                    this.x += 10;
+                    break;
+                case 40 :
+                    this.y += 10;
+                    break;
+            }
+        };
+        
+        isReachedGoal = (goal) => {
+            return this.x + this.width >= goal.x &&              // Điểm bên phải hcn1 chạm/vượt qua điểm bên trái của hcn2
+                this.x <= goal.x + goal.width &&                 // Điểm bên trái hcn1 chạm/vượt qua Điểm bên phải của hcn2
+                this.y + this.height >= goal.y &&                // Điểm dưới hcn1 chạm/vươt qua điểm trên hcn2
+                this.y <= goal.y + goal.height;
+        };
+    }
+    // khởi tạo lơp hình chữ nhật mở rộng, ko di chuyển đc trong game
+    class Goal extends Rectangle {
+        draw = () => {
+            ctx.beginPath();
+            ctx.lineWidth = 10
+            ctx.lineJoin = "bevel"
+            ctx.font = "20px Georgia";
+            ctx.fillText ("G",canvas.width*0.015,canvas.height*0.45)
+            ctx.fillText ("O",canvas.width*0.015,canvas.height*0.5)
+            ctx.fillText ("A",canvas.width*0.015,canvas.height*0.55)
+            ctx.fillText ("L",canvas.width*0.015,canvas.height*0.6)
+            ctx.strokeStyle = "magenta";
+            ctx.strokeRect(this.x, this.y, this.width, this.height);
+        };
+    };
+
+    class Circle {
+        constructor(x, y, radius, speed, color = 'aqua') {
+            this.x = x;
+            this.y = y;
+            this.radius = radius;
+            this.speed = speed;
+            this.color = color;
+        }
+
+        draw = () => {
+            ctx.beginPath();
+            ctx.lineWidth = 20;
+            ctx.strokeStyle = "red";
+            ctx.arc(this.x, this.y, this.radius,0,2*Math.PI);
+            ctx.stroke()
+            ctx.closePath();
+            ctx.beginPath();
+            ctx.fillStyle = this.color;
+            ctx.arc(this.x, this.y, this.radius,0,2*Math.PI);
+            ctx.fill();  
+            ctx.closePath(); 
+            ctx.fillStyle = 'black';
+            ctx.font = '15px serif';
+            ctx.fillText(`x: ${this.x}`, this.x, this.y);
+            this.move();
+        };
+          // khởi tạo tốc độ rơi của quả bóng
+        move = () => {
+            if(!this.isTouchingBorder()) this.y += this.speed;
+        };
+          // khởi tạo phương thức nếu quả bóng chạm vào border thì sẽ xuất hiện quả bóng mới
+        isTouchingBorder = () => {
+            return this.y <= 0 || this.y >= canvas.height;
+        };
+        // khởi tạo thuật toán va chạm với hình chữ nhật di chuyển
+        isColliedWithPlayer = (player) => {
+            let closestPoint = {x: this.x, y: this.y};
+            if(closestPoint.x < player.x) closestPoint.x = player.x;
+              else if(closestPoint.x > player.x + player.width) closestPoint.x = player.x + player.width;
+            if(closestPoint.y < player.y) closestPoint.y = player.y;
+              else if(closestPoint.y > player.y + player.height) closestPoint.y = player.y + player.height;
+            let distance = {x: this.x - closestPoint.x, y: this.y - closestPoint.y};
+              if(Math.pow(distance.x, 2) + Math.pow(distance.y, 2) <= Math.pow(this.radius, 2)){
+                return true;
+            }
+            return false;
+        };
+    };
+
+    // Define player, goal and circleArray
+    let player = new Player(canvas.width*0.99, canvas.height*0.5, 15, 15);
+    player.draw();
+    // Moving with arrow key, lắng nghe sự kiện, truy cập phương thức di chuyển trong class Rectangle mở rộng
+    document.addEventListener('keydown', player.movementWithKeyBoard);
+
+    // Moving with mouse move
+    const getMousePos = (event) => {
+        const canvasRect = canvas.getBoundingClientRect(); //getBoundingClienRect trả về kích thươc và vị trí của một phần tử
+
+        return {
+            x: event.clientX - canvasRect.left,
+            y: event.clientY - canvasRect.top
+        };
+    };
+    canvas.addEventListener('mousemove', (e) => {
+        const mousePos = getMousePos(e);
+        if(player.x > mousePos.x && player.x > 0) player.x -= 15;
+        else if(player.x < mousePos.x && player.x < canvas.width) player.x += 15;
+        if(player.y > mousePos.y && player.y > 0) player.y -= 15;
+        else if(player.y < mousePos.y && player.y < canvas.height) player.y += 15;
+        // console.log(player.x, player.y);
+        // player.x = mousePos.x;
+        // player.y = mousePos.y;
+    });
+    // khởi tạo hình chử nhật GOAL
+    let goal = new Goal(canvas.width*0.01, canvas.height*0.01, 35, canvas.height*0.98);
+    goal.draw();
+
+    const randomFromMinToMax = (min, max) => {
+        return Math.floor(Math.random() * (max - min) + min);
+    };
+
+    const randomCircle = () => {
+        let rndRadius = randomFromMinToMax(30, 50);
+        let x = randomFromMinToMax(50 + rndRadius, canvas.width - rndRadius - 50);
+        let y;
+        // let y = randomFromMinToMax(rndRadius * 2, canvas.height + 2 * rndRadius);
+        const minusOrAdd = Math.round(Math.random()) == 0 ? '-' : '+';
+        let speed = +eval('0' + minusOrAdd + randomFromMinToMax(3, 5));
+        if(speed > 0) y = 2 * rndRadius;
+        else if(speed < 0) y = canvas.height - 2 * rndRadius;
+        return new Circle(x, y, rndRadius, speed);
+    };
+
+    const generateCircleArray = () => {
+        for(let i = 0; i < circleArray.length; i++) {
+            circleArray[i] = randomCircle();
+        }
+    };
+
+    const drawCircles = () => {
+        for(let i = 0; i < circleArray.length; i++) {
+            if(circleArray[i].isTouchingBorder()) circleArray[i] = randomCircle();
+            circleArray[i].draw();
+        }
+    };
+    generateCircleArray();
+    drawCircles();
+
+    // Game function
+    const clearScreen = () => {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+    };
+
+    const isWin = () => {
+        return player.isReachedGoal(goal);
+    };
+
+    const isGameOver = () => {
+        return circleArray.find((circle, index) => {
+            if(circle.isColliedWithPlayer(player)) {
+                circle.color = 'red';
+                console.log(`Player: ${player.x}, ${player.y}
+                Ball ${index}: ${circle.x}, ${circle.y}`);
+                return circle;
+            };
+        }) == undefined ? false : true;
+    };
+
+    const restart = () => {
+        player.x = canvas.width*0.99;
+        player.y = canvas.height*0.5;
+    };
+
+    const gameUpdate = () => {
+        clearScreen();
+        player.draw();
+        goal.draw();
+        drawCircles();
+        if(isGameOver()) {
+            clearScreen();
+            player.draw();
+            goal.draw();
+            drawCircles();
+            restart();
+            stop();
+        } else if(isWin()) {
+            alert("You win!");
+            restart();
+            stop();
+        }
+    };
+
+    const start = () => {
+        interval = setInterval(gameUpdate, 1000/50);
+    };
+
+    const stop = () => {
+        clearInterval(interval);
+    };
+</script>
+</html>

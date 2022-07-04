@@ -1,0 +1,44 @@
+canvas {
+    background-color: #ccc;
+    display: block;
+    /* text-size-adjust:center;
+    /* top: 100;
+    left: 50;
+    right: 50;
+    bottom: 200; */
+}
+
+body {
+    text-align: center;
+    align-content: center;
+    background-color: #a0d8ef;
+}
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.title {
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    font-weight: bold;
+    color: #63430c4d;
+}
+button{
+    background:gold;
+    padding:0.1em 0.1em;
+    border:black 2px solid;
+    text-decoration:none;
+    font-size:1.5em;
+    text-align: center;
+    align-content: center;
+
+  }
+  .inline-block{
+    display:inline-block;
+  }
+
